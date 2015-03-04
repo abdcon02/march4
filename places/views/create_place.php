@@ -5,7 +5,7 @@
     <body>
         <h1>You have created a new place!</h1>
         <p>
-            {{ newplace.getName }}
+            {{ newcity.getName }}, {{ newcity.getCountry }} 
         </p>
         <p><a href='/'>Go Home</a></p>
     </body>

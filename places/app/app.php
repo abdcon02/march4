@@ -19,15 +19,16 @@
     });
 
     $app->post("/places", function() use($app) {
-        $place = new Place($_POST['city']);
+        $place = new Place($_POST['city'], $_POST['country']);
         $place->save();
-        return $app['twig']->render('create_place.php', array('newplace' => $place));
+
+        return $app['twig']->render('places.php', array('places' => Place::getAll()));
 
     });
 
-    $app->post("/delete_places", function() use($app) {
+    $app->post("/", function() use($app) {
         Place::deleteAll();
-        return $app['twig']->render('delete_places.php');
+        return $app['twig']->render('places.php');
 
     });
 
