@@ -4,15 +4,15 @@ class Place {
 
     private $city;
 
-    function __construct($cityname)
+    function __construct($place_city)
     {
-        $this->city = $cityname;
+        $this->city = $place_city;
     }
     function setName($new_city)
     {
         $this->city = (string) $new_city;
     }
-    function getName($new_city)
+    function getName()
     {
         return $this->city;
     }

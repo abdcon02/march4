@@ -18,14 +18,14 @@
         return $app['twig']->render('places.php', array('places' => Place::getAll()));
     });
 
-    $app->post("/list", function() use($app) {
+    $app->post("/places", function() use($app) {
         $place = new Place($_POST['city']);
         $place->save();
         return $app['twig']->render('create_place.php', array('newplace' => $place));
 
     });
 
-    $app->post("/delete", function() use($app) {
+    $app->post("/delete_places", function() use($app) {
         Place::deleteAll();
         return $app['twig']->render('delete_places.php');
 
