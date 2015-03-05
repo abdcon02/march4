@@ -7,16 +7,18 @@ class Pet
     private $attention;
     private $rest;
 
-    function __construct($name, $food, $attention, $rest)
+
+    function __construct($name, $food = 0, $attention = 0, $rest = 0)
     {
     $this->name = $name;
     $this->food = $food;
     $this->attention = $attention;
     $this->rest = $rest;
+
     }
     function setName($new_name)
     {
-        $this->name = $new_name
+        $this->name = $new_name;
     }
     function setFood($new_food)
     {
@@ -28,7 +30,7 @@ class Pet
     }
     function setRest($new_rest)
     {
-        $this->rest = $new_rest
+        $this->rest = $new_rest;
     }
     function getName()
     {
@@ -36,6 +38,7 @@ class Pet
     }
     function getFood()
     {
+
         return $this->food;
     }
     function getAttention()
@@ -58,6 +61,16 @@ class Pet
     {
         $_SESSION['pet_care'] = array();
     }
+
+    function randomFood() {
+
+        $this->food= rand (0,10);
+        return $this->food;
+    }
+
+
+
+
 }
 
 
